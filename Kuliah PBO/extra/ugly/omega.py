@@ -1,9 +1,9 @@
 #! /usr/bin/env python3
 
-""" example module: extra.iota """
+""" example module: extra.good.omega """
 
-def FunI():
-	return "Iota"
+def FunO():
+	return "Omega"
 
 if __name__ == "__main__":
 	print("I prefer to be a module")
