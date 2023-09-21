@@ -34,8 +34,6 @@ def lihat_profil():
             print(profil["nik"])
             print(profil["no_tel"])
 
-
-
 def edit_profil():
     global cache_login
     lihat_profil()
@@ -72,6 +70,35 @@ def tampilkan_riwayat_pengajuan():
     print("Riwayat Pengajuan:")
     for i, pengajuan in enumerate(riwayat_pengajuan, 1):
         print(f"{i}. {pengajuan}")
+
+def admin():
+    a = 1
+    for profil in data_profil:
+        print(f"{a}. {profil['nama']}")
+        print(f"   No Telepon: {profil['telepon']}")
+        print(f"   NIK       : {profil['nik']}")
+        print(f"   Password  : {profil['password']}")
+        a += 1
+    
+        hapus = input("Masukkan NIK yang akan dihapus:")
+        if hapus == profil["nik"]:
+            data_profil.remove(profil)
+            print(f"Profil dengan NIK {hapus} berhasil dihapus.")
+            return
+    print(f"Tidak ada profil dengan NIK {hapus}.")
+# def admin():
+#     a = 1
+#     for profil in data_profil:
+#         print(a,profil['nama'])
+#         buat tampilan seperti ini
+#         1 aku
+#           no telepon
+#           nik
+#           password
+#         hapus = input("Masukkan NIK yang akan dihapus:")
+#         if (hapus == profil["nik"]):
+            
+    
 
 while perulangan != "tidak":
     print("")
