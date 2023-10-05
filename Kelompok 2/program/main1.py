@@ -30,9 +30,9 @@ def login():
 def lihat_profil():
     for profil in data_profil:
         if profil["nama"] == cache_login["nama"]:
-            print(profil["nama"])
-            print(profil["nik"])
-            print(profil["no_tel"])
+            print("nama:", profil['nama'])
+            print("NIK:", profil['nik'])
+            print("No telp:", profil['no_tel'])
 
 def edit_profil():
     global cache_login
@@ -71,35 +71,6 @@ def tampilkan_riwayat_pengajuan():
     for i, pengajuan in enumerate(riwayat_pengajuan, 1):
         print(f"{i}. {pengajuan}")
 
-def admin():
-    a = 1
-    for profil in data_profil:
-        print(f"{a}. {profil['nama']}")
-        print(f"   No Telepon: {profil['telepon']}")
-        print(f"   NIK       : {profil['nik']}")
-        print(f"   Password  : {profil['password']}")
-        a += 1
-    
-        hapus = input("Masukkan NIK yang akan dihapus:")
-        if hapus == profil["nik"]:
-            data_profil.remove(profil)
-            print(f"Profil dengan NIK {hapus} berhasil dihapus.")
-            return
-    print(f"Tidak ada profil dengan NIK {hapus}.")
-# def admin():
-#     a = 1
-#     for profil in data_profil:
-#         print(a,profil['nama'])
-#         buat tampilan seperti ini
-#         1 aku
-#           no telepon
-#           nik
-#           password
-#         hapus = input("Masukkan NIK yang akan dihapus:")
-#         if (hapus == profil["nik"]):
-            
-    
-
 while perulangan != "tidak":
     print("")
     print("1. Registrasi")
@@ -127,6 +98,7 @@ while perulangan != "tidak":
                     logged_in = False
             else:
                 login()
+            break
     elif pilihan == "3":
         pengajuan_berkas()
     elif pilihan == "4":
