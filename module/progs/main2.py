@@ -1,5 +1,5 @@
 from sys import path
-path.append('E:\Python\Kuliah PBO\packages')
+path.append('D:\Semester3\PBO\Pythonesse2\module\packages')
 
 import extra.iota
 print(extra.iota.FunI())
@@ -13,7 +13,7 @@ print('='*20)
 
 
 from sys import path
-path.append('E:\Python\Kuliah PBO\packages')
+path.append('D:\Semester3\PBO\Pythonesse2\module\packages')
 
 import extra.good.best.sigma
 from extra.good.best.tau import FunT
@@ -48,11 +48,4 @@ print(sig.FunS())
 print(alp.FunA())
 print(FunI())
 print(FunB())
-
-
-
-
-
-
-
 

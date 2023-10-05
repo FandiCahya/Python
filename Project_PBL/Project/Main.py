@@ -15,6 +15,7 @@ while True:
         case "nt": os.system("cls")
     print("===== Sistem Informasi PKL =====")
     print("1. Login Admin")
+    
     print("2. Login Mahasiswa")
     print("3. Keluar")
     pilihan = input("Pilih menu: ")
