@@ -33,7 +33,7 @@ print("Akhir dari program 1")
 
 # contoh aplikasi untuk membuat file data.txt 
 try:
-    with open("data.txt",'r') as file:
+    with open("data.txt",'w') as file:
         print(file.read())
 except:
     print("file data.txt tidak ditemukan, membuat file baru")
