@@ -30,11 +30,9 @@ def login():
 def lihat_profil():
     for profil in data_profil:
         if profil["nama"] == cache_login["nama"]:
-            print(profil["nama"])
-            print(profil["nik"])
-            print(profil["no_tel"])
-
-
+            print("nama:", profil['nama'])
+            print("NIK:", profil['nik'])
+            print("No telp:", profil['no_tel'])
 
 def edit_profil():
     global cache_login
@@ -100,6 +98,7 @@ while perulangan != "tidak":
                     logged_in = False
             else:
                 login()
+            break
     elif pilihan == "3":
         pengajuan_berkas()
     elif pilihan == "4":
