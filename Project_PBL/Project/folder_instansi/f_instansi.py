@@ -1,10 +1,11 @@
+
 class Instansi:
     def __init__(self, id_instansi, nama_instansi, alamat_instansi):
         self.id_instansi = id_instansi
         self.nama_instansi = nama_instansi
         self.alamat_instansi = alamat_instansi
 
-class KelolaInstansi:
+class KelolaInstansi():
     def __init__(self):
         self.data_instansi = []
 
@@ -69,8 +70,3 @@ class KelolaInstansi:
                 break
             else:
                 print("Pilihan tidak valid. Silakan coba lagi.")
-
-# Contoh penggunaan
-if __name__ == "__main__":
-    kelola_instansi = KelolaInstansi()
-    kelola_instansi.menu_instansi()

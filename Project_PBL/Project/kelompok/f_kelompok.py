@@ -1,31 +1,18 @@
-class Instansi:
-    def __init__(self, data_instansi):
-        self.data_instansi = data_instansi
+from sys import path
+path.append('E:\Python\Project_PBL\Project')
 
-    def cari_instansi(self, nama_instansi):
-        for data in self.data_instansi:
-            if data["nama_instansi"] == nama_instansi:
-                return data
-        return None
+from folder_instansi.f_instansi import KelolaInstansi
+from mahasiswa.f_mahasiswa1 import KelolaMahasiswa
 
+ki = KelolaInstansi()
+lm = KelolaMahasiswa()
 
-class Mahasiswa:
-    def __init__(self, data_mhs):
-        self.data_mhs = data_mhs
-
-    def cari_mahasiswa(self, nim):
-        for data in self.data_mhs:
-            if data["nim"] == nim:
-                return data
-        return None
-
-
-class Kelompok:
+class Kelompok():
     def __init__(self):
         self.data_kelompok = []
 
     def tambah_kelompok(self, id_kelompok, instansi, lama_pkl, list_nim):
-        instansi_data = instansi.cari_instansi(nama_instansi)
+        instansi_data = ki.cari_instansi(instansi.data_instansi())
 
         if not instansi_data:
             print("Instansi dengan nama tersebut tidak ditemukan.")
@@ -33,7 +20,7 @@ class Kelompok:
 
         mahasiswas_kelompok = []
         for nim in list_nim:
-            mahasiswa_data = mahasiswa.cari_mahasiswa(nim)
+            mahasiswa_data = lm.cari_mahasiswa(nim)
             if mahasiswa_data:
                 mahasiswas_kelompok.append(mahasiswa_data)
             else:
@@ -48,6 +35,7 @@ class Kelompok:
 
         print("Data kelompok berhasil ditambahkan.")
 
+
     def lihat_kelompok(self):
         for kelompok in self.data_kelompok:
             print("=" * 20)
@@ -58,12 +46,11 @@ class Kelompok:
             print("=" * 20)
             print("")
 
-
 class MenuKelompok:
-    def __init__(self, mahasiswa, instansi, kelompok):
-        self.mahasiswa = mahasiswa
-        self.instansi = instansi
-        self.kelompok = kelompok
+    # def __init__(self, mahasiswa, instansi, kelompok):
+    #     self.mahasiswa = mahasiswa
+    #     self.instansi = instansi
+    #     self.kelompok = kelompok
 
     def menu_kelompok(self):
         while True:
@@ -74,8 +61,8 @@ class MenuKelompok:
             pilihan = input("Pilih menu: ")
 
             if pilihan == "1":
-                lihat_mahasiswa()
-                lihat_instansi()
+                # self.mahasiswa.lihat_mahasiswa()
+                # self.instansi.lihat_instansi()
                 id_kelompok = input("ID Kelompok: ")
                 instansi_nama = input("Nama Instansi : ")
                 lama_pkl = input("Lama PKL: ")
@@ -88,31 +75,28 @@ class MenuKelompok:
             else:
                 print("Pilihan tidak valid. Silakan coba lagi.")
 
+# if __name__ == "__main__":
+#     mahasiswa = KelolaMahasiswa()
+#     instansi = KelolaInstansi()
+#     kelompok = Kelompok()
 
-if __name__ == "__main__":
-    data_instansi = []  # Isi data instansi sesuai kebutuhan
-    data_mhs = []  # Isi data mahasiswa sesuai kebutuhan
+#     menu_kelompok = MenuKelompok(mahasiswa, instansi, kelompok)
 
-    instansi = Instansi(data_instansi)
-    mahasiswa = Mahasiswa(data_mhs)
-    kelompok = Kelompok()
-    menu_kelompok = MenuKelompok(mahasiswa, instansi, kelompok)
+#     while True:
+#         print("===== Menu Admin =====")
+#         print("1. Kelola Data Mahasiswa")
+#         print("2. Kelola Data Instansi")
+#         print("3. Kelola Data Kelompok")
+#         print("4. Keluar")
+#         pilihan = input("Pilih menu: ")
 
-    while True:
-        print("===== Menu Admin =====")
-        print("1. Kelola Data Mahasiswa")
-        print("2. Kelola Data Instansi")
-        print("3. Kelola Data Kelompok")
-        print("4. Keluar")
-        pilihan = input("Pilih menu: ")
-
-        if pilihan == "1":
-            ms.menu_mahasiswa()
-        elif pilihan == "2":
-            ins.menu_instansi()
-        elif pilihan == "3":
-            menu_kelompok.menu_kelompok()
-        elif pilihan == "4":
-            break
-        else:
-            print("Pilihan tidak valid. Silakan coba lagi.")
+#         if pilihan == "1":
+#             mahasiswa.menu_mahasiswa()
+#         elif pilihan == "2":
+#             instansi.menu_instansi()
+#         elif pilihan == "3":
+#             menu_kelompok.menu_kelompok()
+#         elif pilihan == "4":
+#             break
+#         else:
+#             print("Pilihan tidak valid. Silakan coba lagi.")

@@ -91,6 +91,5 @@ class KelolaMahasiswa:
             print("NIM tidak ditemukan.")
 
 # Contoh penggunaan
-if __name__ == "__main__":
-    kelola_mahasiswa = KelolaMahasiswa()
-    kelola_mahasiswa.menu_mahasiswa()
+
+kelola_mahasiswa = KelolaMahasiswa()

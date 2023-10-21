@@ -2,10 +2,8 @@ from sys import path
 
 path.append('E:\Python\Project_PBL\Project')
 import os
-import mahasiswa.f_mahasiswa as ms
-# import instansi.f_instansi as ins
-# import kelompok.f_kelompok as kel
-import admin.m_admin as ad
+from mahasiswa.f_mahasiswa1 import KelolaMahasiswa
+from admin.m_admin import Admin 
 
 if __name__ == "__main__":
     sistem_operasi = os.name
@@ -15,15 +13,16 @@ while True:
         case "nt": os.system("cls")
     print("===== Sistem Informasi PKL =====")
     print("1. Login Admin")
-    
     print("2. Login Mahasiswa")
     print("3. Keluar")
     pilihan = input("Pilih menu: ")
 
     if pilihan == "1":
-        ad.login_admin()
+        adm = Admin()
+        adm.login_admin()
     elif pilihan == "2":
-        ms.login_mahasiswa()
+        km = KelolaMahasiswa()
+        km.login_mahasiswa()
     elif pilihan == "3":
         break
     else:

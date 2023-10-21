@@ -1,9 +1,9 @@
 from sys import path
 
 path.append('E:\Python\Project_PBL\Project')
-import mahasiswa.f_mahasiswa1 as ms
-import instansi.f_instansi as ins
-import kelompok.f_kelompok as kel
+from mahasiswa.f_mahasiswa1 import KelolaMahasiswa
+from folder_instansi.f_instansi import KelolaInstansi
+from kelompok.f_kelompok import MenuKelompok
 
 class Admin:
     def __init__(self):
@@ -19,11 +19,14 @@ class Admin:
             pilihan = input("Pilih menu: ")
 
             if pilihan == "1":
-                ms.menu_mahasiswa()
+                km = KelolaMahasiswa()
+                km.menu_mahasiswa()
             elif pilihan == "2":
-                ins.menu_instansi()
+                ks = KelolaInstansi()
+                ks.menu_instansi()
             elif pilihan == "3":
-                kel.menu_kelompok()
+                mk = MenuKelompok()
+                mk.menu_kelompok()
             elif pilihan == "4":
                 break
             else:
@@ -38,7 +41,3 @@ class Admin:
         else:
             print("Login gagal. Coba lagi.")
 
-# Contoh penggunaan
-if __name__ == "__main__":
-    admin = Admin()
-    admin.login_admin()
