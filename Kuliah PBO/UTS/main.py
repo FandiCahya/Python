@@ -1,8 +1,7 @@
 import datetime
-import os
 from jadwalku import acara
 
-db = []
+# db = []
 valid_input = True
 while valid_input:
     try:
@@ -10,6 +9,7 @@ while valid_input:
         if n <= 0:
             raise ValueError("Jumlah acara harus lebih besar dari 0")
 
+        acara1 = acara()
         for i in range(n):
             nama_acara = input(f"Masukkan Nama Acara ke-{i+1} : ")
             tahun = int(input("Masukkan tahun acara (YYYY): "))
@@ -17,11 +17,10 @@ while valid_input:
             hari = int(input("Masukkan tanggal acara (DD): "))
             jam = int(input("Masukkan jam acara (HH): "))
             menit = int(input("Masukkan menit acara (MM): "))
-            waktu = datetime.datetime(tahun, bulan, hari, jam, menit)
-            db.append({"Waktu": waktu, "Acara": nama_acara})
-
-        acara1 = acara(db)
-        print("=" * 20)
+            print("=" * 30)
+            waktu_acara = datetime.datetime(tahun, bulan, hari, jam, menit)
+            # db.append({"Waktu": waktu_acara, "Acara": nama_acara})
+            acara1.tambah_acara(waktu_acara,nama_acara)
         acara1.lihat_jadwal()
         valid_input = False
 
