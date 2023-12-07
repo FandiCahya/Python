@@ -8,36 +8,36 @@ db_connection = mysql.connector.connect(
 )
 cursor = db_connection.cursor()
 
-class Instansi:
+class Dosen:
 
 
     def __init__(self):
         self
         
     def tampil (self):
-        sql = "select * from instansi"
+        sql = "select * from dosen"
         cursor.execute(sql)
         myresult = cursor.fetchall()
         return myresult
     
-    def cari_data (id):
-        sql = "SELECT id, nama, alamat FROM instansi where id = %s "
-        val = (id,)
+    def cari_data (nip):
+        sql = "SELECT nip, nama, alamat FROM dosen where nip = %s "
+        val = (nip,)
         cursor.execute(sql,val)
         myresult = cursor.fetchone()
         return myresult
     
     def select_data():
-        sql = "SELECT * FROM instansi"
+        sql = "SELECT * FROM dosen"
         cursor.execute(sql)
         myresult = cursor.fetchall()
         for x in myresult:
             print(x)
 
-    def insert_ins(id, nama, alamat):
+    def insert_ins(nip, nama, alamat):
         try:
-            sql = "INSERT INTO instansi (id, nama, alamat) VALUES (%s, %s, %s)"
-            val = (id, nama, alamat)
+            sql = "INSERT INTO dosen (nip, nama, alamat) VALUES (%s, %s, %s)"
+            val = (nip, nama, alamat)
             cursor.execute(sql, val)
             db_connection.commit()
             print("Data instansi berhasil ditambahkan!")
@@ -46,10 +46,10 @@ class Instansi:
         except mysql.connector.Error as err:
             print(f"Error: {err}")
 
-    def update_ins(id, nama_baru, alamat_baru):
+    def update_ins(nip, nama_baru, alamat_baru):
         try:
-            sql = "UPDATE instansi SET nama = %s, alamat = %s WHERE id = %s"
-            val = (nama_baru, alamat_baru, id)
+            sql = "UPDATE dosen SET nama = %s, alamat = %s WHERE nip = %s"
+            val = (nama_baru, alamat_baru, nip)
             cursor.execute(sql, val)
             db_connection.commit()
             print(cursor.rowcount, "Data Instansi berhasil diperbarui...")
@@ -57,10 +57,10 @@ class Instansi:
         except mysql.connector.Error as err:
             print(f"Error: {err}")
 
-    def delete_ins(id):
+    def delete_ins(nip):
         try:
-            sql = "DELETE FROM instansi WHERE id = %s"
-            val = (id,)
+            sql = "DELETE FROM dosen WHERE nip = %s"
+            val = (nip,)
             cursor.execute(sql, val)
             db_connection.commit()
             print(cursor.rowcount, "Data Instansi berhasil dihapus...")
@@ -75,12 +75,12 @@ class Instansi:
     #         self.cursor.execute(sql)
     #         myresult = self.cursor.fetchall()
     #         if len(myresult)>0:
-    #             print("{:<5} {:<20} {:<50}".format('id', 'Nama', 'Alamat'))
+    #             print("{:<5} {:<20} {:<50}".format('nip', 'Nama', 'Alamat'))
     #             print("-" * 50)
     #             for row in myresult:
     #                 print("{:<5} {:<20} {:<50}".format(row[0], row[1], row[2]))
     #         else:
-    #             print("Tidak Tersedia Data Mahasiswa")
+    #             print("Tnipak Tersedia Data Mahasiswa")
     #     except mysql.connector.Error as err:
     #         print(f"Error: {err}")
 
