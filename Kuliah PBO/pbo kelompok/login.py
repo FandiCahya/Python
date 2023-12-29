@@ -9,10 +9,15 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import dashboard_admin as da
+import dashboard_dosen as dd
+import dashboard_mhs as dm
+from User import User
 
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
+        self.dialog = MainWindow
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(800, 600)
         font = QtGui.QFont()
@@ -63,6 +68,8 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        
+        self.pushButton.clicked.connect(self.login)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -71,6 +78,37 @@ class Ui_MainWindow(object):
         self.label.setText(_translate("MainWindow", "USERNAME :"))
         self.label_2.setText(_translate("MainWindow", "PASSWORD :"))
 
+    def openDA(self):
+        self.dialog.close()
+        self.window = QtWidgets.QMainWindow()
+        self.ui = da.Ui_MainWindow()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
+    def openDM(self):
+        self.dialog.close()
+        self.window = QtWidgets.QMainWindow()
+        self.ui = dm.Ui_MainWindow()
+        self.ui.setupUi(self.window)
+        self.window.show()
+        
+    def openDS(self):
+        self.dialog.close()
+        self.window = QtWidgets.QMainWindow()
+        self.ui = dd.Ui_MainWindow()
+        self.ui.setupUi(self.window)
+        self.window.show()
+        
+    def login(self):
+        username = self.lineEdit.text()
+        password = self.lineEdit_2.text()
+        lvl_login = User.login(username, password)
+        if lvl_login == "admin":
+            self.openDA()
+        elif lvl_login == "dosen":
+            self.openDS()
+        elif lvl_login == "mahasiswa":
+            self.openDM()
 
 if __name__ == "__main__":
     import sys

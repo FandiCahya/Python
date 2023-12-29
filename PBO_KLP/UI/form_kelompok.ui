@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>562</width>
+    <height>826</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>178</x>
+      <y>16</y>
+      <width>216</width>
+      <height>39</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>TAMBAH KELOMPOK</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="ID">
+    <property name="geometry">
+     <rect>
+      <x>54</x>
+      <y>138</y>
+      <width>376</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="NAMA">
+    <property name="geometry">
+     <rect>
+      <x>56</x>
+      <y>218</y>
+      <width>376</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="ANGGOTA1">
+    <property name="geometry">
+     <rect>
+      <x>58</x>
+      <y>306</y>
+      <width>251</width>
+      <height>34</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="ANGGOTA2">
+    <property name="geometry">
+     <rect>
+      <x>61</x>
+      <y>388</y>
+      <width>251</width>
+      <height>34</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="ANGGOTA3">
+    <property name="geometry">
+     <rect>
+      <x>59</x>
+      <y>474</y>
+      <width>251</width>
+      <height>34</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="INSTANSI">
+    <property name="geometry">
+     <rect>
+      <x>63</x>
+      <y>548</y>
+      <width>251</width>
+      <height>34</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="DOSEN">
+    <property name="geometry">
+     <rect>
+      <x>67</x>
+      <y>626</y>
+      <width>251</width>
+      <height>34</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BTN_SIMPAN">
+    <property name="geometry">
+     <rect>
+      <x>115</x>
+      <y>709</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>SIMPAN</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BTN_KEMBALI">
+    <property name="geometry">
+     <rect>
+      <x>288</x>
+      <y>712</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>BACK</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>53</x>
+      <y>111</y>
+      <width>134</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ID</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>57</x>
+      <y>199</y>
+      <width>134</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>NAMA</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>58</x>
+      <y>288</y>
+      <width>134</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ANGGOTA 1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>62</x>
+      <y>373</y>
+      <width>134</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ANGGOTA 2</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>59</x>
+      <y>458</y>
+      <width>134</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ANGGOTA 3</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>62</x>
+      <y>531</y>
+      <width>134</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>INSTANSI</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>65</x>
+      <y>610</y>
+      <width>134</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>DOSEN</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>562</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

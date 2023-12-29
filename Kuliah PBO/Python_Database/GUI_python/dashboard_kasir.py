@@ -77,7 +77,7 @@ class Ui_DashboardKasir(object):
         self.Dialog.close()
         # from delete_brg import Ui_delete
         self.delete_form = QDialog()
-        self.ui_delete_form = Ui_delete()
+        self.ui_deletxe_form = Ui_delete()
         self.ui_delete_form.setupUi(self.delete_form)
         self.delete_form.show()
         
